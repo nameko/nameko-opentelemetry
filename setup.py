@@ -31,7 +31,7 @@ setup(
         "opentelemetry-instrumentation",
         "opentelemetry-instrumentation-wsgi",
         "importlib-metadata<7; python_version<='3.7'",
-        "Werkzeug < 3.0.0"
+        "Werkzeug < 3.0.0",
     ],
     extras_require={
         "dev": list(PACKAGE_INFO["_instruments"])
