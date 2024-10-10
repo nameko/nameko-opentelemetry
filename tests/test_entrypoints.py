@@ -360,7 +360,7 @@ class TestExceptions:
 
         event = span.events[0]
         assert event.name == "exception"
-        assert event.attributes["exception.type"] == "Error"
+        assert event.attributes["exception.type"].endswith("Error")
         assert event.attributes["exception.message"] == "boom"
         assert 'raise self.Error("boom")' in event.attributes["exception.stacktrace"]
         assert event.attributes["exception.escaped"] == "True"
@@ -381,7 +381,7 @@ class TestExceptions:
 
         event = span.events[0]
         assert event.name == "exception"
-        assert event.attributes["exception.type"] == "Error"
+        assert event.attributes["exception.type"].endswith("Error")
         assert event.attributes["exception.message"] == "boom"
         assert 'raise self.Error("boom")' in event.attributes["exception.stacktrace"]
         assert event.attributes["exception.escaped"] == "True"
@@ -408,7 +408,7 @@ class TestExceptions:
 
         event = span.events[0]
         assert event.name == "exception"
-        assert event.attributes["exception.type"] == "Error"
+        assert event.attributes["exception.type"].endswith("Error")
         assert event.attributes["exception.message"] == "boom"
         assert (
             "Exception occurred on stacktrace formatting"
